@@ -7,8 +7,11 @@ export const Header = styled.header`
 export const H2 = styled.h2`
   font-size: 32px;
   color: #78787b;
+  margin: 0;
 `;
 export const H6 = styled.h2`
-  font-size: 22px;
+  font-size: 16px;
   color: #78787b;
+  margin: 0;
+  font-weight: 400;
 `;

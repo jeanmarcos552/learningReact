@@ -5,12 +5,13 @@ import { PageTitle } from '../../../Components/PageTitle';
 import { Row } from '../../../Components/Row';
 import { Center } from '../../../style';
 
-export function UseStage() {
+export function UseState() {
   const [count, setCount] = useState(0);
 
   return (
     <Center>
-      <PageTitle title="Hook useState" subtititle={String(count)} />
+      <PageTitle title="Hook useState" subtititle="" />
+      {String(count)}
       <Row align="center" direction="row" style={{ paddingBottom: 10 }}>
         <PageButton onClick={() => setCount(count - 1)}>Subtrair -1</PageButton>
         <PageButton onClick={() => setCount(count + 1)}>Somar +1</PageButton>
