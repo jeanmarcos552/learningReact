@@ -2,6 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 
 import { Home } from './Pages/Home';
 import { UseEffect } from './Pages/Hooks/UseEffect';
+import { UseRef } from './Pages/Hooks/UseRef';
 import { UseState } from './Pages/Hooks/UseState';
 import { ContainerDefault, Sidebar, SpanName } from './style';
 import './style.css';
@@ -12,18 +13,19 @@ function App() {
       <Sidebar>
         <Link to="/">
           <SpanName>
-            {/* <img src="../img/logo.png" alt="" width="100%" /> */}
             <span>{'<Jean />'} </span>
           </SpanName>
         </Link>
 
         <ul>
-          <li></li>
           <li>
             <Link to="useState">UseState</Link>
           </li>
           <li>
             <Link to="useEffect">UseEffect</Link>
+          </li>
+          <li>
+            <Link to="useRef">useRef()</Link>
           </li>
         </ul>
       </Sidebar>
@@ -31,6 +33,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/UseState" element={<UseState />} />
         <Route path="/UseEffect" element={<UseEffect />} />
+        <Route path="/useRef" element={<UseRef />} />
       </Routes>
     </ContainerDefault>
   );

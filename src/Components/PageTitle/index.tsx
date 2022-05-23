@@ -6,9 +6,11 @@ interface PropPageTitle {
 }
 export function PageTitle({ title, subtititle }: PropPageTitle) {
   return (
-    <Header>
-      <H2>{title}</H2>
-      {subtititle && <H6>{subtititle}</H6>}
-    </Header>
+    <>
+      <Header>
+        <H2>{title}</H2>
+        {subtititle && <H6>{subtititle}</H6>}
+      </Header>
+    </>
   );
 }

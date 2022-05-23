@@ -11,4 +11,5 @@ export const Container = styled.div<PropContainer>`
   align-items: ${(prop) => prop.align || 'center'};
   justify-content: ${(prop) => prop.align || 'center'};
   justify-items: ${(prop) => prop.align || 'center'};
+  margin: 10px 0;
 `;

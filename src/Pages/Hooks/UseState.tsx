@@ -1,16 +1,18 @@
 import { useState } from 'react';
-import { PageButton } from '../../../Components/Button';
-
-import { PageTitle } from '../../../Components/PageTitle';
-import { Row } from '../../../Components/Row';
-import { Center } from '../../../style';
+import { PageButton } from '../../Components/Button';
+import { PageTitle } from '../../Components/PageTitle';
+import { Row } from '../../Components/Row';
+import { Center } from '../../style';
 
 export function UseState() {
   const [count, setCount] = useState(0);
 
   return (
     <Center>
-      <PageTitle title="Hook useState" subtititle="" />
+      <PageTitle
+        title="Hook useState"
+        subtititle="Permite adicionar o state do React a um componente de função"
+      />
       {String(count)}
       <Row align="center" direction="row" style={{ paddingBottom: 10 }}>
         <PageButton onClick={() => setCount(count - 1)}>Subtrair -1</PageButton>
