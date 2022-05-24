@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from 'react-router-dom';
 
 import { Home } from './Pages/Home';
+import { UseCallback } from './Pages/Hooks/UseCallback';
 import { UseEffect } from './Pages/Hooks/UseEffect';
 import { UseMemo } from './Pages/Hooks/UseMemo';
 import { UseRef } from './Pages/Hooks/UseRef';
@@ -31,6 +32,9 @@ function App() {
           <li>
             <Link to="useMemo">UseMemo()</Link>
           </li>
+          <li>
+            <Link to="useCallback">useCallback()</Link>
+          </li>
         </ul>
       </Sidebar>
       <Routes>
@@ -39,6 +43,7 @@ function App() {
         <Route path="/UseEffect" element={<UseEffect />} />
         <Route path="/useRef" element={<UseRef />} />
         <Route path="/useMemo" element={<UseMemo />} />
+        <Route path="/useCallback" element={<UseCallback />} />
       </Routes>
     </ContainerDefault>
   );
