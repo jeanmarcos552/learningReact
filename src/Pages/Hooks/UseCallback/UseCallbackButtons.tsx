@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { PageButton } from '../../Components/Button';
+import { PageButton } from '../../../Components/Button';
 
-import { Row } from '../../Components/Row';
+import { Row } from '../../../Components/Row';
 
 interface PropUseCallbackButtons {
   count: (delta: number) => void;

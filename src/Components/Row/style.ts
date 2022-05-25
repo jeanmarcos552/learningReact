@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 type PropContainer = {
   direction: 'row' | 'column' | 'column-reverse' | 'inherit' | 'row-reverse';
-  align?: 'center' | 'flex-start' | 'flex-end';
+  align?: 'center' | 'flex-start' | 'flex-end' | 'space-between';
 };
 
 export const Container = styled.div<PropContainer>`

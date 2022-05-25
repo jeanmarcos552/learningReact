@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 
-import { PageTitle } from '../../Components/PageTitle';
-import { Center } from '../../style';
+import { PageTitle } from '../../../Components/PageTitle';
+import { Center } from '../../../style';
 import UseCallbackButtons from './UseCallbackButtons';
 
 export function UseCallback() {
