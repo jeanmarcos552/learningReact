@@ -1,26 +1,14 @@
 import { Link } from 'react-router-dom';
+import { menusRoutes } from '../../routes';
 
 export function Menu() {
-  return (
-    <ul>
-      <li>
-        <Link to="useState">UseState()</Link>
+  function mountRoutes() {
+    return menusRoutes.map((item) => (
+      <li key={item.alias}>
+        <Link to={item.path}>{item.alias}</Link>
       </li>
-      <li>
-        <Link to="useEffect">UseEffect()</Link>
-      </li>
-      <li>
-        <Link to="useRef">useRef()</Link>
-      </li>
-      <li>
-        <Link to="useMemo">UseMemo()</Link>
-      </li>
-      <li>
-        <Link to="useCallback">useCallback()</Link>
-      </li>
-      <li>
-        <Link to="useContext">useContext()</Link>
-      </li>
-    </ul>
-  );
+    ));
+  }
+
+  return <ul>{mountRoutes()}</ul>;
 }
