@@ -5,14 +5,8 @@ import { Row } from '../../Components/Row';
 import DataContext from '../../data/Context';
 import { Center } from '../../style';
 
-interface PropContext {
-  state: {
-    name: string;
-  };
-  setState: (value: any) => void;
-}
 export function UseContext() {
-  const { state, setState } = useContext<PropContext>(DataContext);
+  const { state, setState } = useContext(DataContext);
 
   return (
     <Center>

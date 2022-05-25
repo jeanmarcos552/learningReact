@@ -2,17 +2,14 @@ import { Link } from 'react-router-dom';
 
 import { ContainerDefault, Sidebar, SpanName } from './style';
 import './style.css';
-import DataContext, { data } from './data/Context';
-import { useState } from 'react';
 
 import { Menu } from './Components/Menu';
 import { Content } from './Components/Content';
+import Store from './data/Store';
 
 function App() {
-  const [state, setState] = useState(data);
-
   return (
-    <DataContext.Provider value={{ state, setState }}>
+    <Store>
       <ContainerDefault>
         <Sidebar>
           <Link to="/">
@@ -26,7 +23,7 @@ function App() {
 
         <Content />
       </ContainerDefault>
-    </DataContext.Provider>
+    </Store>
   );
 }
 
