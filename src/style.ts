@@ -20,7 +20,7 @@ export const Sidebar = styled.div`
     list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     /* height: calc(100vh - 107px); */
     height: calc(100vh - 38px);
 
