@@ -6,18 +6,18 @@ import DataContext from '../../data/Context';
 import { Center } from '../../style';
 
 export function UseContext() {
-  const { state, setState } = useContext(DataContext);
+  const { name, updateName } = useContext(DataContext);
 
   return (
     <Center>
       <PageTitle title="Hook useContext" subtititle="" />
 
       <Row align="center" direction="column" style={{ paddingBottom: 10 }}>
-        <PageTitle title={String(state.name)} />
+        <PageTitle title={String(name)} />
         <input
           type="text"
-          onChange={(e) => setState({ ...state, name: e.target.value })}
-          defaultValue={state.name}
+          onChange={(e) => updateName(e.target.value)}
+          defaultValue={name}
         />
       </Row>
       <hr />

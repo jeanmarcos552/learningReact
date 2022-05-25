@@ -1,17 +1,10 @@
 import { createContext } from 'react';
+import { IContext } from '../types/store';
 
-interface IContext {
-  state: {
-    name?: string;
-  };
-  setState: (value: any) => void;
-}
-export const data = {
+export const initalState = {
   name: 'Jean Marcos',
+  updateName: () => null,
 };
 
-const DataContext = createContext<IContext>({
-  state: {},
-  setState: () => null,
-});
+const DataContext = createContext<IContext>(initalState);
 export default DataContext;

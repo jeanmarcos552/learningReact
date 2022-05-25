@@ -6,14 +6,14 @@ import DataContext from '../../data/Context';
 import { Center } from '../../style';
 
 export function Home() {
-  const { state } = useContext(DataContext);
+  const { name } = useContext(DataContext);
   return (
     <Center>
-      <PageTitle title={`Ola ${state.name}!`} />
+      <PageTitle title={`Ola ${name}!`} />
       <Row direction="column">
         <PageTitle title="Learning React. From Basic to Avançad"></PageTitle>
         <nav>
-          <Link to="/UseState">Início {'->'}</Link>
+          <Link to="/UseState">Início {'>'}</Link>
         </nav>
       </Row>
     </Center>
