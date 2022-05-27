@@ -3,30 +3,45 @@ import { IconeEdit, IconeTrash } from '../icons/index';
 
 interface TableProp {
   clientes: Cliente[];
+  handleEdit?: (value: Cliente) => void;
+  handleDelet?: (value: Cliente) => void;
 }
 
-export function Table({ clientes }: TableProp) {
+export function Table({ clientes, handleEdit, handleDelet }: TableProp) {
+  const hasAction = handleDelet || handleEdit;
   function renderHead() {
     return (
       <tr className="bg-gradient-to-r to-purple-400 from-purple-800 items-center">
         <td className="p-4  text-gray-100">ID</td>
         <td className="p-4  text-gray-100">Nome</td>
         <td className="p-4  text-gray-100">Idade</td>
-        <td className="p-4  text-gray-100">Ação</td>
+        {hasAction && <td className="p-4  text-gray-100">Ação</td>}
       </tr>
     );
   }
 
-  function actions() {
+  function actions(item: Cliente) {
     return (
-      <td className="p-4">
-        <button className="text-green-500  hover:bg-white transition rounded-full p-1">
-          {IconeEdit}
-        </button>
-        <button className="text-red-600  hover:bg-white transition rounded-full p-1 ">
-          {IconeTrash}
-        </button>
-      </td>
+      hasAction && (
+        <td className="p-4">
+          {handleEdit && (
+            <button
+              onClick={() => handleEdit?.(item)}
+              className="text-green-500  hover:bg-white transition rounded-full p-1"
+            >
+              {IconeEdit}
+            </button>
+          )}
+          {handleDelet && (
+            <button
+              onClick={() => handleDelet?.(item)}
+              className="text-red-600  hover:bg-white transition rounded-full p-1 "
+            >
+              {IconeTrash}
+            </button>
+          )}
+        </td>
+      )
     );
   }
 
@@ -37,14 +52,10 @@ export function Table({ clientes }: TableProp) {
         className={i % 2 === 0 ? 'bg-purple-100' : 'bg-purple-200'}
       >
         <td className="p-4 text-purple-800">{item.id}</td>
-        <td className="p-4 text-purple-800" key={item.id}>
-          {item.name}
-        </td>
-        <td className="p-4 text-purple-800" key={item.id}>
-          {item.age}
-        </td>
+        <td className="p-4 text-purple-800">{item.name}</td>
+        <td className="p-4 text-purple-800">{item.age}</td>
 
-        {actions()}
+        {actions(item)}
       </tr>
     ));
   }
